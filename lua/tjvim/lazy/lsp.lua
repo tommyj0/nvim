@@ -1,18 +1,14 @@
 return {
-  "nvim-telescope/telescope.nvim",
-  "nvim-lua/plenary.nvim",
-
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
   "nvim-treesitter/playground",
 
-  "mbbill/undotree",
-
   {
     "VonHeikemen/lsp-zero.nvim",
     branch = "v1.x",
+    dependencies = {
       -- LSP Support
       { "neovim/nvim-lspconfig" },             -- Required
       { "williamboman/mason.nvim" },           -- Optional
@@ -29,11 +25,10 @@ return {
       -- Snippets
       { "L3MON4D3/LuaSnip" },             -- Required
       { "rafamadriz/friendly-snippets" }, -- Optional
+    },
   },
   {
     "windwp/nvim-autopairs",
-    config = function() require("nvim-autopairs").setup {} end
+    config = true
   },
 }
-
-

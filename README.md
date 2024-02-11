@@ -1,5 +1,19 @@
 # Neovim Config
 
+## Dependencies
+
+1. Neovim >= 0.8
+
+2. One of the following Terminal:
+
+- alactritty
+
+- iterm2
+
+3. cargo, npm, pip (for LSP server installs)
+
+4. ripgrep (for telescope searches)
+
 ## Setup
 
 | *Folder* | Windows | Linux |

@@ -9,35 +9,15 @@ if not vim.loop.fs_stat(lazypath) then
     lazypath,
   })
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 vim.g.mapleader = " "
 
 vim.opt.termguicolors = true
 
-require("lazy").setup("tjvim.lazy")
---[[
-require("lazy").setup({
-  -- PLUGINS:
-
-  "folke/tokyonight.nvim",
-  {
-    "nvim-lualine/lualine.nvim",
-    "kyazdani42/nvim-web-devicons",
+require("lazy").setup("tjvim.lazy", {
+  change_detection = {
+    notify = false,
   },
-
-  {
-    "akinsho/toggleterm.nvim",
-    config = function()
-      require("toggleterm").setup()
-    end
-  },
-
-  "numToStr/Comment.nvim",
-
-  { "github/copilot.vim", branch = "release" },
-}, {
-  -- OPTS:
-
-}) 
-]]--
+})

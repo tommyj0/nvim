@@ -1,7 +1,6 @@
 -- vim.opt.guicursor = ""
-
--- vim.cmd 'colorscheme catppuccin'
-
+-- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
+vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -13,7 +12,7 @@ vim.opt.shiftwidth = 2
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = true
+vim.opt.wrap = false
 
 vim.opt.swapfile = false
 vim.opt.backup = false
@@ -24,6 +23,8 @@ vim.opt.hlsearch = false
 vim.opt.incsearch = true
 
 vim.opt.termguicolors = true
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
 vim.opt.scrolloff = 8
 vim.opt.signcolumn = "yes"
@@ -46,7 +47,6 @@ vim.g.copilot_filetypes = {
   ["lua"] = true,
   ["python"] = true,
   ["rust"] = true,
-  ["go"] = true,
   ["c"] = true,
   ["cpp"] = true,
   ["c#"] = true,
