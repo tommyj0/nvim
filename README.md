@@ -1,13 +1,20 @@
 # Neovim Config
 
-## Dependencies
+## Requirements
 
-1. Neovim >= 0.8
+### Neovim 
 
-2. One of the following Terminal:
+Install Neovim >= 0.8
 
-- alactritty
+### Terminal
 
+One of the following Terminals:
+
+| Terminal | Windows | MacOS | Linux |
+|---|---|---|---|
+|(https://github.com/alacritty/alacritty)[Alacritty] | &check;|&check;|&check;|
+
+&cross;
 - iterm2
 
 3. cargo, npm, pip (for LSP server installs)
@@ -16,12 +23,14 @@
 
 ## Setup
 
-| *Folder* | Windows | Linux |
-|---|---|---|
-| config | C:\Users\[USER]\AppData\Local\nvim | ~/.config/nvim |
-| data | C:\Users\[USER]\AppData\Local\nvim-data | ~/.local/share/nvim |
+
+After installing dependencies:
 
 - Delete (and backup) the config and data folder for current setup
 
-- Copy folder into config file
+- Clone repo into config folder
 
+| *Folder* | Windows | Linux |
+|---|---|---|
+| config | C:\Users\USER\AppData\Local\nvim | ~/.config/nvim |
+| data | C:\Users\USER\AppData\Local\nvim-data | ~/.local/share/nvim |
