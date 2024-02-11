@@ -1,8 +1,7 @@
-require("tjvim.lazy")
+require("tjvim.lazy_init")
 
 require("tjvim.remap")
 require("tjvim.set")
--- require("tjvim.packer")
 
 print("neovim config loaded")
 
