@@ -2,6 +2,12 @@
 
 ## Install
 
-- Copy folder to C:\Users\[USER]\AppData\Local\nvim or ~/.config/nvim
+| *Folder* | Windows | Linux |
+|---|---|---|
+| config | C:\Users\[USER]\AppData\Local\nvim | ~/.config/nvim |
+| data | C:\Users\[USER]\AppData\Local\nvim-data | ~/.local/share/nvim |
 
-- Install packer.nvim [here](https://github.com/wbthomason/packer.nvim?tab=readme-ov-file)
+- Delete (and backup) the config and data folder for current 
+
+- Copy folder into config file
+
