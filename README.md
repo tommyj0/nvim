@@ -4,7 +4,7 @@
 
 ### Neovim 
 
-Install Neovim >= 0.8
+Install [Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) >= 0.8
 
 ### Terminal
 
@@ -21,13 +21,13 @@ Install one of the following Terminals along with a [Nerd Font](https://www.nerd
 
 Optional Installs for LSP servers:
 
-- cargo
-- npm
-- pip
+- [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [pip](https://pip.pypa.io/en/stable/installation/)
 
 ### Tools
 
-- ripgrep
+- [ripgrep](https://github.com/BurntSushi/ripgrep)
 - C compiler
 
 ## Setup
@@ -36,9 +36,13 @@ After installing requirements:
 
 - Delete (and backup) the config and data folder for current setup
 
-- Clone repo into config folder
+- Clone into config folder
 
 | Folder | Windows | MacOS | Linux |
 |---|---|---|---|
 | config | C:\Users\USER\AppData\Local\nvim | ~/.config/nvim | ~/.config/nvim |
 | data | C:\Users\USER\AppData\Local\nvim-data | ~/.local/share/nvim | ~/.local/share/nvim |
+
+```shell
+git clone https://github.com/tommyj0/nvim.git [CONFIG FOLDER]
+```
