@@ -1,5 +1,4 @@
 -- vim.opt.guicursor = ""
--- vim.o.statusline = "%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.opt.nu = true
 vim.opt.relativenumber = true

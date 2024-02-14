@@ -3,6 +3,15 @@
 return {
 
   {
+    "windwp/nvim-autopairs",
+    config = true
+  },
+  {
+    "nvim-treesitter/nvim-treesitter",
+    build = ":TSUpdate",
+  },
+  "nvim-treesitter/playground",
+  {
     "nvim-lua/plenary.nvim",
     name = "plenary",
   },
@@ -14,10 +23,6 @@ return {
     },
   },
   "nvim-tree/nvim-web-devicons",
-  {
-    "folke/trouble.nvim",
-    dependencies = "nvim-tree/nvim-web-devicons"
-  },
   {
     "ggandor/leap.nvim",
     config = true,
