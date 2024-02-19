@@ -1,7 +1,6 @@
 return {
   {
   "neovim/nvim-lspconfig",
-  lazy = false,
   dependencies = {
     "williamboman/mason.nvim",
     "williamboman/mason-lspconfig.nvim",
@@ -13,6 +12,10 @@ return {
     "L3MON4D3/LuaSnip",
     "saadparwaiz1/cmp_luasnip",
     "j-hui/fidget.nvim",
+  },
+  keys = {
+    {"<S-K>", "<cmd>lua vim.lsp.buf.hover()<CR>", desc = "Hover Manual" },
+    {"<leader>l", "<cmd>lua vim.lsp.buf.format()<CR>", desc = "Format"},
   },
 
   config = function()
@@ -30,7 +33,7 @@ return {
         -- navic.attach(client, bufnr)
       -- end
     -- }
-    require("fidget").setup({})
+    -- require("fidget").setup({})
     require("mason").setup()
     require("mason-lspconfig").setup({
       ensure_installed = {
@@ -85,14 +88,15 @@ return {
     })
 
     vim.diagnostic.config({
-      update_in_insert = false,
+      -- update_in_insert = false,
       float = {
-        focusable = false,
-        style = "minimal",
-        border = "rounded",
-        source = "always",
-        header = "",
-        prefix = "",
+        -- focusable = false,
+        -- style = "minimal",
+        -- border = "rounded",
+        -- source = "always",
+        -- header = "",
+        -- prefix = "",
+        virtual_text = true,
       },
     })
 
@@ -112,16 +116,6 @@ return {
     "neovim/nvim-lspconfig"
   },
   config = function()
-    -- local cmp_lsp = require("cmp_nvim_lsp")
---
-    -- require("lspconfig").clangd.setup {
-      -- on_attach = on_attach,
-      -- capabilities = cmp_lsp.default_capabilities(),
-      -- cmd = {
-        -- "clangd",
-        -- "--offset-encoding=utf-16",
-      -- },
-    -- }
     local navic = require("nvim-navic")
     require("lspconfig").clangd.setup {
       on_attach = function(client, bufnr)

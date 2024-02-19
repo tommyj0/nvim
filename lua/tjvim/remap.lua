@@ -1,24 +1,19 @@
 -- import map func
 local map = require("tjvim.utils").map
 
--- map("n", ",<Space>", ":nohlsearch<CR>", { silent = true })
--- map("n", "<Leader>", ":<C-u>WhichKey ','<CR>" { silent = true })
--- map("n", "<Leader>?", ":WhichKey ','<CR>")
--- map("n", "<Leader>a", ":cclose<CR>")
 -- leader keys
 map("n", "<leader>w", ":w<CR>", { silent = true })
 map("n", "<leader>q", ":q<CR>", { silent = true })
 map("n", "<leader>c", ":bdelete!<CR>", { silent = true })
 map("n", "<leader>/", ":normal gcc<CR> :+1<CR>", { silent = true })
 map("v", "<leader>/", ":normal gcc<CR>", { silent = true })
-map("n", "<leader>p", ":PackerSync<CR>", { silent = true })
+map("n", "<leader>p", ":Lazy sync<CR>", { silent = true })
 map("n", "<leader>o", ":Telescope<CR>", { silent = true })
--- map("n", "<leader>t", ":TroubleToggle document_diagnostics<CR>", { silent = true })
-map("n", "<leader>l", ":lua vim.lsp.buf.format()<CR>")
 map("n", "<leader>e", ":Neotree toggle<CR>")
 map("n", "<leader>rc", ':!clang "%:p" -Wall -Wextra -o out.exe && out.exe <CR>')
 map("n", "<leader>r+", ':!clang++ "%:p" -Wall -Wextra -o out.exe && out.exe<CR>')
 map("n", "<leader>rp", ':!python "%:p" <CR>')
+map("n", "<leader>m", ':!make<CR>')
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
 
 -- window resize

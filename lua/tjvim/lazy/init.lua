@@ -1,7 +1,6 @@
 -- INIT
 -- simple installs :)
 return {
-
   {
     "windwp/nvim-autopairs",
     config = true
