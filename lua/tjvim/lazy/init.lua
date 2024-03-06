@@ -2,6 +2,11 @@
 -- simple installs :)
 return {
   {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {}
+  },
+  {
     "windwp/nvim-autopairs",
     config = true
   },
