@@ -20,7 +20,7 @@ return {
         end,
         desc = "Delete Buffer",
       },
-      -- stylua: ignore
+--      stylua: ignore
       { "<leader>bD", function() require("mini.bufremove").delete(0, true) end, desc = "Delete Buffer (Force)" },
     },
   },
@@ -28,6 +28,7 @@ return {
     "akinsho/bufferline.nvim",
     name = "bufferline",
     event = "VeryLazy",
+    version = "*",
     keys = {
       { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>",            desc = "Toggle pin" },
       { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
@@ -41,15 +42,15 @@ return {
     },
     opts = {
       options = {
-        -- stylua: ignore
+--        stylua: ignore
         close_command = function(n) require("mini.bufremove").delete(n, false) end,
-        -- stylua: ignore
+--        stylua: ignore
         right_mouse_command = function(n) require("mini.bufremove").delete(n, false) end,
         diagnostics = "nvim_lsp",
-        -- diagnostics_indicator = function(count, level, diagnostics_dict, context)
-        -- local icon = level:match("error") and " " or " "
-        -- return " " .. icon .. count
-        -- end,
+--        diagnostics_indicator = function(count, level, diagnostics_dict, context)
+--        local icon = level:match("error") and " " or " "
+--        return " " .. icon .. count
+--        end,
 
         diagnostics_indicator = function(count, level, diagnostics_dict, context)
           local s = " "
@@ -71,16 +72,6 @@ return {
         },
       },
     },
-    config = function(_, opts)
-      require("bufferline").setup(opts)
-      -- Fix bufferline when restoring a session
-      vim.api.nvim_create_autocmd("BufAdd", {
-        callback = function()
-          vim.schedule(function()
-            pcall(nvim_bufferline)
-          end)
-        end,
-      })
-    end,
+    config = true,
   },
 }

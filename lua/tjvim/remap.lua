@@ -50,6 +50,9 @@ map("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>")
 map("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>")
 map("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>")
 
+-- movement
+map("n", "=", "10k")
+map("n", "-", "10j")
 
 -- characters
 map("i", "£", "#")

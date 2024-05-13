@@ -10,6 +10,12 @@ return {
     "windwp/nvim-autopairs",
     config = true
   },
+  -- {
+    -- 'akinsho/bufferline.nvim',
+    -- version = "v4.2.0",
+    -- dependencies = 'nvim-tree/nvim-web-devicons',
+    -- config = true,
+  -- },
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
