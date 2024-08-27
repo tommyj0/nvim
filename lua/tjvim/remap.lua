@@ -2,6 +2,7 @@
 local map = require("tjvim.utils").map
 
 -- leader keys
+map("n", "<leader>n", "<cmd>lua vim.lsp.buf.rename()<CR>")
 map("n", "<leader>w", ":w<CR>", { silent = true })
 map("n", "<leader>q", ":q<CR>", { silent = true })
 map("n", "<leader>c", ":bdelete!<CR>", { silent = true })
