@@ -29,6 +29,7 @@ Optional Installs for LSP servers:
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
 - C compiler
+- luarocks
 
 ## Setup
 
