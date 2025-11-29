@@ -4,7 +4,7 @@
 
 ### Neovim 
 
-Install [Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) >= 0.8
+Install [Neovim](https://github.com/neovim/neovim/blob/master/INSTALL.md) >= 0.10.5
 
 ### Terminal
 
@@ -22,8 +22,11 @@ Install one of the following Terminals along with a [Nerd Font](https://www.nerd
 Optional Installs for LSP servers:
 
 - [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+
 - [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+
 - [pip](https://pip.pypa.io/en/stable/installation/)
+
 
 ### Tools
 
