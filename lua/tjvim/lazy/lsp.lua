@@ -50,8 +50,7 @@ return {
         end,
 
         ["lua_ls"] = function()
-          local lspconfig = require("lspconfig")
-          lspconfig.lua_ls.setup {
+          local lspconfig = require("lspconfig").lua_ls.setup {
             capabilities = capabilities,
             settings = {
               Lua = {

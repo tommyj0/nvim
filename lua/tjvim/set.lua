@@ -3,6 +3,21 @@ vim.cmd[[set shellcmdflag=-command]]
 vim.cmd[[set shellquote=\"]]
 vim.cmd[[set shellxquote=]]
 -- vim.opt.guicursor = ""
+vim.opt.shell = "/bin/bash"
+
+vim.g.clipboard = {
+  name = "WslClipboard",
+  copy = {
+    ["+"] = "clip.exe",
+    ["*"] = "clip.exe",
+  },
+  paste = {
+    ["+"] = "powershell.exe -NoProfile -Command Get-Clipboard",
+    ["*"] = "powershell.exe -NoProfile -Command Get-Clipboard",
+  },
+  cache_enabled = 0,
+}
+
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.opt.nu = true
 vim.opt.relativenumber = true
