@@ -39,8 +39,9 @@ return {
       ensure_installed = {
         "lua_ls",
         "rust_analyzer",
-        -- "tsserver",
-        "clangd",
+        -- "clangd",
+        "pylsp",
+        "cmake",
       },
       handlers = {
         function(server_name) -- default handler (optional)
@@ -86,17 +87,23 @@ return {
       })
     })
 
+
+    local signs = {
+      Error = " ",
+      Warn  = " ",
+      Hint  = " ",
+      Info  = " ",
+    }
+
+    for type, icon in pairs(signs) do
+      local hl = "DiagnosticSign" .. type
+      vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = "" })
+    end
+
+
     vim.diagnostic.config({
+      virtual_lines = true,
       -- update_in_insert = false,
-      float = {
-        -- focusable = false,
-        -- style = "minimal",
-        -- border = "rounded",
-        -- source = "always",
-        -- header = "",
-        -- prefix = "",
-        virtual_text = true,
-      },
     })
 
     require("lspconfig").clangd.setup {
@@ -104,9 +111,21 @@ return {
       capabilities = cmp_lsp.default_capabilities(),
       cmd = {
         "clangd",
-        "--offset-encoding=utf-16",
+        "--clangd-tidy",
+        "--clangd-tidy-checks=*",
+        "--enable-config",
+        "--diagnostic-style=detailed",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--fallback-style=Mozilla",
       },
     }
+
+    vim.api.nvim_create_autocmd("CursorHold", {
+      callback = function()
+        vim.diagnostic.show()
+      end,
+    })
   end,
 },
 {

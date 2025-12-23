@@ -18,6 +18,7 @@ vim.g.clipboard = {
   cache_enabled = 0,
 }
 
+
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
 vim.opt.nu = true
 vim.opt.relativenumber = true
@@ -31,7 +32,7 @@ vim.opt.clipboard = "unnamedplus"
 
 vim.opt.smartindent = true
 
-vim.opt.wrap = false
+vim.opt.wrap = true
 
 vim.opt.swapfile = false
 vim.opt.backup = false

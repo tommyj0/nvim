@@ -17,9 +17,9 @@ Install one of the following Terminals along with a [Nerd Font](https://www.nerd
 |[iterm2](https://iterm2.com/)| &cross;|&check;|&cross;|
 |[kitty](https://github.com/kovidgoyal/kitty)| &cross;|&check;|&check;|
 
-### Package Managers
+### Dependencies
 
-Optional Installs for LSP servers:
+Optional for LSP servers:
 
 - [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
 
@@ -27,12 +27,19 @@ Optional Installs for LSP servers:
 
 - [pip](https://pip.pypa.io/en/stable/installation/)
 
-
-### Tools
+Other packages (varying importance):
 
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
-- C compiler
+
+- gcc
+
 - luarocks
+
+- clangd
+
+- nodejs
+
+> running :checkhealth in neovim usually tells you what you're missing
 
 ## Setup
 
@@ -50,3 +57,10 @@ After installing requirements:
 ```shell
 git clone https://github.com/tommyj0/nvim.git [CONFIG FOLDER]
 ```
+
+## Common problems
+
+1. Double diagnostics (particularly in C)
+
+Probably due to an install of the server in both system & neovim (through Mason). Delete one of them (get to mason with ":Mason", then X on server to remove).
+
