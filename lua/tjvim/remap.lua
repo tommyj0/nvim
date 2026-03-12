@@ -5,7 +5,7 @@ local map = require("tjvim.utils").map
 map("n", "<leader>n", "<cmd>lua vim.lsp.buf.rename()<CR>")
 map("n", "<leader>w", ":w<CR>", { silent = true })
 map("n", "<leader>q", ":q<CR>", { silent = true })
-map("n", "<leader>c", ":bdelete!<CR>", { silent = true })
+map("n", "<leader>x", ":bdelete!<CR>", { silent = true })
 map("n", "<leader>/", ":normal gcc<CR> :+1<CR>", { silent = true })
 map("v", "<leader>/", ":normal gcc<CR>", { silent = true })
 map("n", "<leader>p", ":Lazy sync<CR>", { silent = true })

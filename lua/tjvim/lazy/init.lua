@@ -34,10 +34,6 @@ return {
   },
   "nvim-tree/nvim-web-devicons",
   {
-    "ggandor/leap.nvim",
-    config = true,
-  },
-  {
     "numToStr/Comment.nvim",
     config = true
   },
