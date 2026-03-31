@@ -20,7 +20,6 @@ return {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
   },
-  "nvim-treesitter/playground",
   {
     "nvim-lua/plenary.nvim",
     name = "plenary",

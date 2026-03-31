@@ -19,28 +19,29 @@ Install one of the following Terminals along with a [Nerd Font](https://www.nerd
 
 ### Dependencies
 
-Optional for LSP servers:
+Core (recommended):
 
-- [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
-
-- [npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
-
-- [pip](https://pip.pypa.io/en/stable/installation/)
-
-Other packages (varying importance):
-
+- [git](https://git-scm.com/)
+- [curl](https://curl.se/)
 - [ripgrep](https://github.com/BurntSushi/ripgrep)
+- [gcc](https://gcc.gnu.org/) (needed by `telescope-fzf-native` build)
+- [make](https://www.gnu.org/software/make/)
+- [unzip](https://infozip.sourceforge.net/)
 
-- gcc
+LSP/tooling runtime dependencies:
 
-- luarocks
+- [python3 + pip](https://pip.pypa.io/en/stable/installation/)
+- [nodejs + npm](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm)
+- [cargo](https://doc.rust-lang.org/cargo/getting-started/installation.html)
+- [clangd](https://clangd.llvm.org/)
 
-- clangd
+Optional but useful:
 
-- nodejs
+- [cmake](https://cmake.org/)
+- [ninja](https://ninja-build.org/)
+- [luajit](https://luajit.org/)
 
 > running :checkhealth in neovim usually tells you what you're missing
-
 ## Setup
 
 After installing requirements:

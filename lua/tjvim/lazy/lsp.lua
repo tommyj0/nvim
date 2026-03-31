@@ -21,6 +21,14 @@ return {
     config = function()
       local cmp = require('cmp')
       local cmp_lsp = require("cmp_nvim_lsp")
+      local navic_ok, navic = pcall(require, "nvim-navic")
+
+      local function on_attach(client, bufnr)
+        if navic_ok and client.server_capabilities.documentSymbolProvider then
+          navic.attach(client, bufnr)
+        end
+      end
+
       local capabilities = vim.tbl_deep_extend(
         "force",
         {},
@@ -41,29 +49,44 @@ return {
           "rust_analyzer",
           -- "clangd",
           "pylsp",
-          "cmake",
+          "neocmake",
         },
-        handlers = {
-          function(server_name) -- default handler (optional)
-            require("lspconfig")[server_name].setup {
-              capabilities = capabilities
-            }
-          end,
+      })
 
-          ["lua_ls"] = function()
-            local lspconfig = require("lspconfig").lua_ls.setup {
-              capabilities = capabilities,
-              settings = {
-                Lua = {
-                  diagnostics = {
-                    globals = { "vim", "it", "describe", "before_each", "after_each" },
-                  }
-                }
+      local servers = {
+        lua_ls = {
+          settings = {
+            Lua = {
+              diagnostics = {
+                globals = { "vim", "it", "describe", "before_each", "after_each" },
               }
             }
-          end,
-        }
-      })
+          }
+        },
+        rust_analyzer = {},
+        pylsp = {},
+        neocmake = {},
+        clangd = {
+          cmd = {
+            "clangd",
+            "--clangd-tidy",
+            "--clangd-tidy-checks=*",
+            "--enable-config",
+            "--diagnostic-style=detailed",
+            "--completion-style=detailed",
+            "--header-insertion=never",
+            "--fallback-style=Mozilla",
+          },
+        },
+      }
+
+      for server, server_config in pairs(servers) do
+        vim.lsp.config(server, vim.tbl_deep_extend("force", {
+          capabilities = capabilities,
+          on_attach = on_attach,
+        }, server_config))
+        vim.lsp.enable(server)
+      end
 
       local cmp_select = { behavior = cmp.SelectBehavior.Select }
 
@@ -106,21 +129,6 @@ return {
         -- update_in_insert = false,
       })
 
-      require("lspconfig").clangd.setup {
-        on_attach = on_attach,
-        capabilities = cmp_lsp.default_capabilities(),
-        cmd = {
-          "clangd",
-          "--clangd-tidy",
-          "--clangd-tidy-checks=*",
-          "--enable-config",
-          "--diagnostic-style=detailed",
-          "--completion-style=detailed",
-          "--header-insertion=never",
-          "--fallback-style=Mozilla",
-        },
-      }
-
       vim.api.nvim_create_autocmd("CursorHold", {
         callback = function()
           vim.diagnostic.show()
@@ -134,12 +142,7 @@ return {
       "neovim/nvim-lspconfig"
     },
     config = function()
-      local navic = require("nvim-navic")
-      require("lspconfig").clangd.setup {
-        on_attach = function(client, bufnr)
-          navic.attach(client, bufnr)
-        end
-      }
+      require("nvim-navic").setup({})
     end
   },
 }
